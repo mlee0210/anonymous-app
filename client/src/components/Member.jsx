@@ -6,6 +6,7 @@ const Member = ({ person }) => {
     <div>
       <span> {person.name} </span>
       <span> {person.age} </span>
+      <button onclick={this.handleClick}>Delete</button>
     </div>
   );
 };

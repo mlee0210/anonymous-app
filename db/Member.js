@@ -17,8 +17,14 @@ const add = function (name, age, cb) {
   connection.query(query, [name, age], cb);
 };
 
+const remove = function (name, cb) {
+  const query = 'DELETE FROM anonymous_table WHERE name=?';
+  connection.query(query, [name], cb);
+}
+
 
 module.exports = {
   getAll,
   add,
+  remove
 };

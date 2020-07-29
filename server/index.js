@@ -22,7 +22,6 @@ app.get('/members', (req, res) => {
     if(err) {
       res.status(500).send(err);
 	} else {
-	  console.log('members: ', members);
 	  res.json(members);
 	}
   });
@@ -38,6 +37,16 @@ app.post('/members', (req, res) => {
       return res.status(500).send(err);
     }
     res.sendStatus(201);
+  });
+});
+
+app.delete('/members', (req, res) => {
+  const {name} = req.body;
+  Member.remove(name, (err, result) => {
+  	if(err) {
+  	  return res.status(500).send(err);
+  	}
+  	res.sendStatus(201);
   });
 });
 

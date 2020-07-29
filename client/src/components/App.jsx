@@ -30,14 +30,18 @@ class App extends React.Component {
       .catch(err => console.log('error posting member:', err));
   }
 
+  deleteMember(member) {
+    axios.delete('/members', member)
+      .then(results => this.getAllMembers())
+      .catch(err => console.log('error deleting member: ', err));
+  }
+
   render() {
     return (
       <div>
         <h1>Member List</h1>
-        <MemberAdd 
-          handleAddMember={this.addMember}
-        />
-        <MemberList list={this.state.members} />
+        <MemberAdd handleAddMember={this.addMember} />
+        <MemberList list={this.state.members} handleDeleteMember= {this.deleteMember} />
       </div>
     )
   }

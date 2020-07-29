@@ -46,7 +46,7 @@ class MemberAdd extends React.Component {
         <input 
           type="text" 
           value={this.state.age} 
-          onChange={this.handleageChange}
+          onChange={this.handleAgeChange}
         />
         <button onClick={this.handleClick}>Add Member</button>
       </div>
