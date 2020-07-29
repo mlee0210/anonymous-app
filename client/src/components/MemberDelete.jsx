@@ -28,6 +28,7 @@ class MemberDelete extends React.Component {
   }
 
   handleClick() {
+    console.log('clicked');
     var member = {
       name: this.state.name,
       age: parseInt(this.state.age)

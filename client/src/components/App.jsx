@@ -33,7 +33,7 @@ class App extends React.Component {
   }
 
   deleteMember(member) {
-    axios.delete('/members', member)
+    axios.delete('/members', { data: { member } })
       .then(results => this.getAllMembers())
       .catch(err => console.log('error deleting member: ', err));
   }

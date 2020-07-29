@@ -11,7 +11,7 @@ const getAll = function (cb) {
   });
 };
 
-// write a function that adds an item to the list
+// write a function that adds a member to the list
 const add = function (name, age, cb) {
   const query = 'INSERT INTO anonymous_table(name, age) VALUES(?, ?)';
   connection.query(query, [name, age], cb);
@@ -19,7 +19,8 @@ const add = function (name, age, cb) {
 
 const remove = function (name, age, cb) {
   const query = 'DELETE FROM anonymous_table WHERE name=? AND age=?';
-  connection.query(query, [name], cb);
+  //need to pass arguments in an array
+  connection.query(query, [name, age], cb);
 }
 
 
