@@ -17,8 +17,8 @@ const add = function (name, age, cb) {
   connection.query(query, [name, age], cb);
 };
 
-const remove = function (name, cb) {
-  const query = 'DELETE FROM anonymous_table WHERE name=?';
+const remove = function (name, age, cb) {
+  const query = 'DELETE FROM anonymous_table WHERE name=? AND age=?';
   connection.query(query, [name], cb);
 }
 
@@ -26,5 +26,5 @@ const remove = function (name, cb) {
 module.exports = {
   getAll,
   add,
-  remove
+  remove,
 };

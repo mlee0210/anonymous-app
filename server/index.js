@@ -41,7 +41,7 @@ app.post('/members', (req, res) => {
 });
 
 app.delete('/members', (req, res) => {
-  const {name} = req.body;
+  const { name, age } = req.body;
   Member.remove(name, (err, result) => {
   	if(err) {
   	  return res.status(500).send(err);

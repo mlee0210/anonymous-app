@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import MemberList from './MemberList';
 import MemberAdd from './MemberAdd';
+import MemberDelete from './MemberDelete';
 
 class App extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class App extends React.Component {
     }
 
     this.addMember = this.addMember.bind(this);
+    this.deleteMember = this.deleteMember.bind(this);
   }
 
   componentDidMount() {
@@ -41,7 +43,8 @@ class App extends React.Component {
       <div>
         <h1>Member List</h1>
         <MemberAdd handleAddMember={this.addMember} />
-        <MemberList list={this.state.members} handleDeleteMember= {this.deleteMember} />
+        <MemberList list={this.state.members} />
+        <MemberDelete handleDeleteMember={this.deleteMember} />
       </div>
     )
   }
